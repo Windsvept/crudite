@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My CrUDdy App</title>
-    <!--
-    TODO
-    add link to css
-    add link to our app
-    -->
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+	<head>
+		<title>Yum</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+  		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  		crossorigin="anonymous"></script>
+  		<link rel="stylesheet" href="style.css">
+  		<script src="app.js"></script>
+		<!--
+		TODO
+		add link to css
+		-->
+	</head>
+	<body>
+		<div class="container">
+			<textarea class="input-field-title" type="text" placeholder="Enter title"></textarea>
+			<textarea class="input-field-body" type="text" placeholder="Enter Content"></textarea>
+			<button class="store-btn btn">store data</button>
+			<button class="get-btn btn">get data</button>
+			<button class="delete-btn btn">remove data</button>
+			<div class="input-display"></div>
+		</div>
+	</body>
 
-  </head>
-  <body>
-    <div class="container">
-
-          <input class="input-field-title" type="text" placeholder="Enter the Title">
-          <textarea class="input-field-body" placeholder="Enter the content"></textarea> <!-- maybe switch to <div id='fake_textarea' contenteditable></div>-->
-          <button class="store-btn">store data</button>
-          <button class="get-btn">get data</button>
-          <button class="delete-btn">delete data</button>
-
-      <div class="item-display">
-
-      </div>
-    </div>
-
-  </body>
 </html>

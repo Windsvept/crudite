@@ -1,5 +1,3 @@
-$(document).ready(function(){
-
   //to pull up all storage values use
   // localStorage.length as your array length
   // localStorage.key(index) to access by number
@@ -13,34 +11,40 @@ $(document).ready(function(){
   //
   // });
 
-  $('.store-btn').on('click', function(event){
-    let titleValue = $('.input-field-title').val();
-    let contentValue = $('.input-field-body').val();
-    localStorage.setItem('titleValue', titleValue);
-    localStorage.setItem('contentValue', contentValue);
-
+  $(document).ready(function() {
+    //console.log('+++ filename: app.js functionName: jquery.ready expected: no error actual: ', $);
+    //attach event listener to button(input?)
+    //create function stub for read/write/delete
+      //research local storage
+    // $().click(function(){
+  
+    // });
+  
+    $('.store-btn').click(function(event){
+      event.preventDefault();
+      let titleVal = $('.input-field-title').val();
+      let contentVal = $('.input-field-body').val();
+      localStorage.setItem('title', titleVal);
+      localStorage.setItem('content', contentVal);
+    });
+    $('.get-btn').click(function(event){
+      event.preventDefault();
+      let storedTitle = localStorage.getItem('title');
+      let storedContent = localStorage.getItem('content');
+      if(storedContent === null && storedTitle === null){
+        $('.input-display').html(`<p>Nothing to get!</p>`);
+      }else{
+        $('.input-display').html(`<p>${storedTitle} ${storedContent}</p>`);
+      }
+    });
+    $('.delete-btn').click(function(event){
+      event.preventDefault();
+      if(localStorage.getItem('title') !== null && localStorage.getItem('content') !== null){
+        $('.input-display').html(`<p>Deleted Items</p>`);
+        localStorage.removeItem('title');
+        localStorage.removeItem('content');
+      }else{
+        $('.input-display').html(`<p>Nothing to delete!</p>`);
+      }
+    });
   });
-
-  $('.get-btn').on('click', function(event){
-    //console.log(localStorage.getItem('hrext'));
-    let titleValue = localStorage.getItem('titleValue');
-    let contentValue = localStorage.getItem('contentValue');
-
-    $('.debug').html(`<p>${titleValue} ${contentValue}</p>`);
-
-  });
-
-  $('.delete-btn').on('click', function(event){
-    // TODO add in a confirm
-    // throw up .confirm window
-    // capture result
-    // test boolean to delete or not
-    localStorage.removeItem('titleValue');
-    localStorage.removeItem('contentValue');
-    $('.debug').html(`<p>Items deleted</p>`);
-
-
-  });
-
-
-});

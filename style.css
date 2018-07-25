@@ -1,34 +1,47 @@
-.container {
-    display:flex;
-    justify-content: center;
+/*
+layout
+form styles - borders, colors, shapes
 
+*/
+.comtainer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
 
-.item-display {
-    flex-grow: 1;
+.input-display {
+	flex-grow: 1;
 }
 
-button {
-    border-radius: 4px;
-    width: 150px;
-    padding: 5px;
-    height: 25px;
+.btn {
+  	padding: 5px;
+  	background: transparent;
+  	border: 0;
+  	padding: 0;
+  	cursor: pointer;
+  	outline: 0;
+  	-webkit-appearance: none;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: dodgerblue;
 }
 
 button:hover {
-    background-color: dodgerblue;
+	background-color: lightblue;
 }
 
 button:after {
-    background-color: red;
+	background-color: yellow;
 }
 
 .input-field-title {
-
-    text-align: left;
-    height: 50px;
+	height: 60px;
+	font-size: 20px;
 }
 
 .input-field-body {
-    font-size: 25px;
+	height: 60px;
+	font-size: 20px;
 }
